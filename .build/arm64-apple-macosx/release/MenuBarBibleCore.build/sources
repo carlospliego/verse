@@ -1,0 +1,13 @@
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/BibleStore.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Book.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/CuratedVerse.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Tag.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Verse.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/VerseReference.swift

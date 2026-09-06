@@ -1,0 +1,1529 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.xctest/Contents/MacOS/MenuBarBiblePackageTests",
+      "packagePath" : "/Users/carlos/src/verse",
+      "productName" : "MenuBarBiblePackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.MenuBarBible-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/sources",
+      "importPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "MenuBarBible",
+      "moduleOutputPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBible.swiftmodule",
+      "objects" : [
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "MenuBarBible_main",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "verse"
+      ],
+      "outputFileMapPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBible.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift"
+      ],
+      "tempsPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MenuBarBibleCore-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/sources",
+      "importPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/BibleStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Book.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/CuratedVerse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Tag.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Verse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/VerseReference.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MenuBarBibleCore",
+      "moduleOutputPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCore.swiftmodule",
+      "objects" : [
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleStore.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/ChapterHighlight.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleTranslation.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Book.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/CuratedVerse.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VerseReference.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/include/MenuBarBibleCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "verse"
+      ],
+      "outputFileMapPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/ChapterHighlight.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleTranslation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Book.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/CuratedVerse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VerseReference.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/BibleStore.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Book.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/CuratedVerse.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Tag.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Verse.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/VerseReference.swift"
+      ],
+      "tempsPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MenuBarBibleCoreTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/sources",
+      "importPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/BibleStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/ChapterHighlightTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TestSupport.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/VersePickerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MenuBarBibleCoreTests",
+      "moduleOutputPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/BibleStoreTests.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/ChapterHighlightTests.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/UserStoreTests.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/VersePickerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "verse"
+      ],
+      "outputFileMapPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/BibleStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/ChapterHighlightTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/UserStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/VersePickerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/BibleStoreTests.swift",
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/ChapterHighlightTests.swift",
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TestSupport.swift",
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift",
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift",
+        "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/VersePickerTests.swift"
+      ],
+      "tempsPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MenuBarBiblePackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/sources",
+      "importPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBibleCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MenuBarBiblePackageTests",
+      "moduleOutputPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBiblePackageTests.swiftmodule",
+      "objects" : [
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/include/MenuBarBiblePackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "verse"
+      ],
+      "outputFileMapPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules/MenuBarBiblePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "MenuBarBible" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MenuBarBible",
+      "-package-name",
+      "verse",
+      "-c",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift",
+      "-I",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "MenuBarBible_main",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "verse",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MenuBarBibleCore" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MenuBarBibleCore",
+      "-package-name",
+      "verse",
+      "-c",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/BibleStore.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Book.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/CuratedVerse.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Tag.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Verse.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/VerseReference.swift",
+      "-I",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/include/MenuBarBibleCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "verse",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MenuBarBibleCoreTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MenuBarBibleCoreTests",
+      "-package-name",
+      "verse",
+      "-c",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/BibleStoreTests.swift",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/ChapterHighlightTests.swift",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TestSupport.swift",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift",
+      "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/VersePickerTests.swift",
+      "-I",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "verse",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MenuBarBiblePackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MenuBarBiblePackageTests",
+      "-package-name",
+      "verse",
+      "-c",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift",
+      "-I",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/include/MenuBarBiblePackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "verse",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "MenuBarBible" : [
+      "MenuBarBibleCore"
+    ],
+    "MenuBarBibleCore" : [
+
+    ],
+    "MenuBarBibleCoreTests" : [
+      "MenuBarBibleCore"
+    ],
+    "MenuBarBiblePackageTests" : [
+      "MenuBarBibleCoreTests",
+      "MenuBarBibleCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible-entitlement.plist"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/sources"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleTranslation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Book.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/ChapterHighlight.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/CuratedVerse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VerseReference.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.product/Objects.LinkFileList"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/BibleStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Book.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/CuratedVerse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Tag.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/Verse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/VerseReference.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/sources"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/BibleStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/ChapterHighlightTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TestSupport.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/VersePickerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/sources"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/sources"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleTranslation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Book.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/ChapterHighlight.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/CuratedVerse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VerseReference.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/BibleStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/ChapterHighlightTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/UserStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/VersePickerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/runner.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

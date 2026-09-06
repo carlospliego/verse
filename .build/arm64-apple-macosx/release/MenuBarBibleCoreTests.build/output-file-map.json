@@ -1,0 +1,43 @@
+{
+  "": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/MenuBarBibleCoreTests.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/MenuBarBibleCoreTests.o",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/master.swiftdeps"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/BibleStoreTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/BibleStoreTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/BibleStoreTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/BibleStoreTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/BibleStoreTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/ChapterHighlightTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/ChapterHighlightTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/ChapterHighlightTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/ChapterHighlightTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/ChapterHighlightTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TestSupport.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/UserStoreTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/UserStoreTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/UserStoreTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/UserStoreTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/VersePickerTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/VersePickerTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/VersePickerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/VersePickerTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/VersePickerTests.dia"
+  }
+}

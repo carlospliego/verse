@@ -1,0 +1,13 @@
+{
+  "": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/MenuBarBiblePackageTests.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/MenuBarBiblePackageTests.o",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/master.swiftdeps"
+  },
+  "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.derived/runner.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBiblePackageTests.build/runner.dia"
+  }
+}

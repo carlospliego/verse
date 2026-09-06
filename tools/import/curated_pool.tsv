@@ -1,0 +1,337 @@
+# Curated verse pool for Menu Bar Bible.
+# Format: <reference><TAB><comma-separated tag slugs>
+# References only. Text is rendered from whichever translation the user selects.
+# Edit freely. build_curated.py validates every reference against bible.sqlite.
+#
+# Tags: comfort anxiety gratitude courage forgiveness patience
+#       hope wisdom humility provision rest purpose
+
+Genesis 1:27	purpose,humility
+Genesis 28:15	comfort,courage
+Genesis 50:20	hope,purpose
+Exodus 14:14	rest,courage
+Exodus 33:14	rest,comfort
+Deuteronomy 6:5	purpose
+Deuteronomy 31:6	courage,comfort
+Deuteronomy 31:8	courage,comfort
+Deuteronomy 8:3	provision
+Joshua 1:9	courage
+Joshua 24:15	purpose
+Ruth 1:16	purpose,courage
+1 Samuel 16:7	humility,wisdom
+1 Samuel 12:24	gratitude,purpose
+2 Samuel 22:29	hope
+1 Kings 19:11-12	rest,comfort
+1 Chronicles 16:11	hope,rest
+1 Chronicles 16:34	gratitude
+2 Chronicles 7:14	humility,forgiveness
+2 Chronicles 20:15	courage,anxiety
+Nehemiah 8:10	gratitude,comfort
+Job 19:25	hope
+Job 23:10	patience,hope
+Job 42:2	humility,hope
+Psalms 1:1-3	wisdom,purpose
+Psalms 4:8	rest,anxiety
+Psalms 9:9-10	comfort,hope
+Psalms 16:8	courage,rest
+Psalms 16:11	hope,purpose
+Psalms 18:2	courage,comfort
+Psalms 19:14	humility,wisdom
+Psalms 23:1-3	rest,provision,comfort
+Psalms 23:4	comfort,courage
+Psalms 27:1	courage,anxiety
+Psalms 27:13-14	patience,hope
+Psalms 28:7	gratitude,courage
+Psalms 29:11	rest,provision
+Psalms 30:5	hope,comfort
+Psalms 32:8	wisdom,purpose
+Psalms 34:4	anxiety,comfort
+Psalms 34:8	gratitude,hope
+Psalms 34:17-18	comfort,anxiety
+Psalms 37:4	hope,purpose
+Psalms 37:7	patience,rest
+Psalms 37:23-24	provision,hope
+Psalms 40:1-2	patience,hope
+Psalms 42:11	hope,comfort
+Psalms 46:1	comfort,anxiety
+Psalms 46:10	rest,anxiety
+Psalms 51:10	forgiveness,humility
+Psalms 51:12	forgiveness,hope
+Psalms 55:22	anxiety,rest
+Psalms 56:3	anxiety,courage
+Psalms 62:1-2	rest,patience
+Psalms 63:1	purpose,hope
+Psalms 71:5	hope,patience
+Psalms 73:26	comfort,provision
+Psalms 84:11	provision,gratitude
+Psalms 86:5	forgiveness,comfort
+Psalms 90:12	wisdom,purpose
+Psalms 91:1-2	comfort,rest
+Psalms 94:19	anxiety,comfort
+Psalms 100:4-5	gratitude
+Psalms 103:2-4	gratitude,forgiveness
+Psalms 103:8	forgiveness,patience
+Psalms 103:12	forgiveness
+Psalms 107:1	gratitude
+Psalms 118:24	gratitude,hope
+Psalms 119:11	wisdom,purpose
+Psalms 119:105	wisdom,purpose
+Psalms 121:1-2	comfort,provision
+Psalms 126:5	patience,hope
+Psalms 127:1-2	rest,humility
+Psalms 130:5	patience,hope
+Psalms 133:1	forgiveness,gratitude
+Psalms 136:1	gratitude
+Psalms 139:1-3	comfort,purpose
+Psalms 139:14	gratitude,purpose
+Psalms 139:23-24	humility,wisdom
+Psalms 143:8	hope,wisdom
+Psalms 145:8-9	forgiveness,gratitude
+Psalms 145:18	comfort,hope
+Psalms 147:3	comfort
+Proverbs 2:6	wisdom
+Proverbs 3:5-6	wisdom,anxiety
+Proverbs 3:7-8	humility,wisdom
+Proverbs 4:23	wisdom,purpose
+Proverbs 10:12	forgiveness
+Proverbs 11:2	humility,wisdom
+Proverbs 12:25	anxiety,comfort
+Proverbs 14:29	patience,wisdom
+Proverbs 15:1	patience,humility
+Proverbs 15:22	wisdom,humility
+Proverbs 16:3	purpose,wisdom
+Proverbs 16:9	humility,purpose
+Proverbs 16:18	humility
+Proverbs 16:32	patience,courage
+Proverbs 17:22	gratitude,comfort
+Proverbs 18:10	courage,comfort
+Proverbs 19:11	patience,forgiveness
+Proverbs 19:21	humility,purpose
+Proverbs 21:5	patience,wisdom
+Proverbs 22:4	humility,provision
+Proverbs 27:17	wisdom,courage
+Proverbs 28:13	forgiveness,humility
+Proverbs 29:11	patience,wisdom
+Proverbs 29:23	humility
+Proverbs 31:25	courage,hope
+Ecclesiastes 3:1	patience,rest
+Ecclesiastes 3:11	hope,purpose
+Ecclesiastes 4:9-10	comfort,courage
+Ecclesiastes 7:8	patience,humility
+Ecclesiastes 9:10	purpose
+Ecclesiastes 12:13	purpose,wisdom
+Isaiah 1:18	forgiveness
+Isaiah 12:2	courage,anxiety
+Isaiah 26:3	rest,anxiety
+Isaiah 30:15	rest,humility
+Isaiah 30:21	wisdom,purpose
+Isaiah 40:8	hope
+Isaiah 40:29	provision,courage
+Isaiah 40:31	patience,hope,rest
+Isaiah 41:10	anxiety,courage,comfort
+Isaiah 41:13	comfort,courage
+Isaiah 43:1-2	comfort,courage
+Isaiah 43:18-19	hope,purpose
+Isaiah 46:4	provision,comfort
+Isaiah 53:5	forgiveness,hope
+Isaiah 54:10	comfort,hope
+Isaiah 55:8-9	humility,wisdom
+Isaiah 58:11	provision,rest
+Isaiah 61:1-3	comfort,hope
+Isaiah 64:8	humility,purpose
+Jeremiah 1:5	purpose
+Jeremiah 17:7-8	hope,rest
+Jeremiah 29:11	hope,purpose
+Jeremiah 29:12-13	hope,patience
+Jeremiah 31:3	comfort
+Jeremiah 32:17	courage,hope
+Jeremiah 33:3	hope,wisdom
+Lamentations 3:22-23	hope,gratitude
+Lamentations 3:25-26	patience,rest
+Ezekiel 36:26	forgiveness,hope
+Daniel 2:20-21	wisdom,humility
+Daniel 3:17-18	courage
+Daniel 6:10	courage,purpose
+Hosea 6:3	patience,hope
+Joel 2:25	hope,forgiveness
+Amos 5:24	purpose
+Jonah 2:7	comfort,hope
+Micah 6:8	humility,purpose
+Micah 7:7	patience,hope
+Micah 7:18	forgiveness
+Nahum 1:7	comfort,provision
+Habakkuk 2:3	patience,hope
+Habakkuk 3:17-18	gratitude,hope
+Zephaniah 3:17	comfort,rest
+Haggai 2:4	courage,purpose
+Zechariah 4:6	humility,courage
+Malachi 3:6	comfort,hope
+Malachi 3:10	provision,gratitude
+Matthew 5:3-4	comfort,humility
+Matthew 5:7	forgiveness
+Matthew 5:9	forgiveness,purpose
+Matthew 5:14-16	purpose,courage
+Matthew 5:44	forgiveness,courage
+Matthew 6:14-15	forgiveness
+Matthew 6:25	anxiety,provision
+Matthew 6:26	anxiety,provision
+Matthew 6:33	purpose,provision
+Matthew 6:34	anxiety,rest
+Matthew 7:7	hope,patience
+Matthew 7:12	purpose,wisdom
+Matthew 7:24-25	wisdom,courage
+Matthew 10:29-31	anxiety,comfort
+Matthew 11:28-30	rest,comfort
+Matthew 16:26	wisdom,purpose
+Matthew 18:21-22	forgiveness,patience
+Matthew 19:26	hope,courage
+Matthew 22:37-39	purpose
+Matthew 23:12	humility
+Matthew 28:20	comfort,courage
+Mark 9:23	hope,courage
+Mark 9:35	humility,purpose
+Mark 10:27	hope,courage
+Mark 11:24	hope
+Mark 11:25	forgiveness
+Mark 12:30-31	purpose
+Luke 1:37	hope,courage
+Luke 6:31	purpose,wisdom
+Luke 6:37	forgiveness,humility
+Luke 6:38	gratitude,provision
+Luke 10:41-42	anxiety,rest
+Luke 11:9-10	patience,hope
+Luke 12:22-24	anxiety,provision
+Luke 12:32	comfort,courage
+Luke 14:11	humility
+Luke 18:27	hope,courage
+Luke 21:19	patience,courage
+John 1:5	hope,courage
+John 3:16	hope,gratitude
+John 6:35	provision,rest
+John 8:12	hope,purpose
+John 8:32	wisdom,courage
+John 10:10	hope,purpose
+John 13:34-35	forgiveness,purpose
+John 14:1	anxiety,comfort
+John 14:6	hope,purpose
+John 14:27	rest,anxiety,comfort
+John 15:4-5	humility,purpose
+John 15:13	purpose,courage
+John 16:33	courage,comfort,hope
+Acts 1:8	courage,purpose
+Acts 4:12	hope
+Acts 17:28	comfort,purpose
+Acts 20:24	courage,purpose
+Acts 20:35	gratitude,purpose
+Romans 5:3-5	patience,hope
+Romans 5:8	forgiveness,gratitude
+Romans 8:1	forgiveness,comfort
+Romans 8:18	patience,hope
+Romans 8:26	comfort,anxiety
+Romans 8:28	hope,purpose
+Romans 8:31	courage,comfort
+Romans 8:38-39	comfort,hope
+Romans 12:2	wisdom,purpose
+Romans 12:9-10	purpose,humility
+Romans 12:12	patience,hope
+Romans 12:18	patience,forgiveness
+Romans 12:21	courage,forgiveness
+Romans 15:13	hope,rest
+1 Corinthians 1:27	humility,purpose
+1 Corinthians 6:19-20	purpose,humility
+1 Corinthians 10:13	courage,comfort
+1 Corinthians 10:31	purpose,gratitude
+1 Corinthians 13:4-5	patience,forgiveness
+1 Corinthians 13:7	patience,hope
+1 Corinthians 15:58	patience,purpose
+1 Corinthians 16:13-14	courage
+2 Corinthians 1:3-4	comfort
+2 Corinthians 4:8-9	courage,hope
+2 Corinthians 4:16-18	hope,patience
+2 Corinthians 5:7	courage,hope
+2 Corinthians 5:17	hope,forgiveness
+2 Corinthians 9:8	provision,gratitude
+2 Corinthians 12:9	humility,comfort
+2 Corinthians 12:10	courage,humility
+Galatians 5:22-23	patience,purpose
+Galatians 6:2	comfort,purpose
+Galatians 6:9	patience,courage
+Ephesians 2:8-9	humility,gratitude
+Ephesians 2:10	purpose
+Ephesians 3:20	hope,provision
+Ephesians 4:2	patience,humility
+Ephesians 4:29	wisdom,purpose
+Ephesians 4:31-32	forgiveness,patience
+Ephesians 5:15-16	wisdom,purpose
+Ephesians 6:10	courage
+Philippians 1:6	hope,patience
+Philippians 2:3-4	humility
+Philippians 2:13	purpose,provision
+Philippians 3:13-14	hope,purpose
+Philippians 4:4	gratitude
+Philippians 4:6-7	anxiety,rest,gratitude
+Philippians 4:8	wisdom,anxiety
+Philippians 4:11-12	gratitude,patience
+Philippians 4:13	courage,provision
+Philippians 4:19	provision,anxiety
+Colossians 3:2	wisdom,purpose
+Colossians 3:12-13	patience,forgiveness,humility
+Colossians 3:15	rest,gratitude
+Colossians 3:17	gratitude,purpose
+Colossians 3:23-24	purpose,patience
+1 Thessalonians 5:11	comfort,courage
+1 Thessalonians 5:16-18	gratitude,rest
+1 Thessalonians 5:24	hope,provision
+2 Thessalonians 3:3	comfort,courage
+2 Thessalonians 3:16	rest,comfort
+1 Timothy 4:12	courage,purpose
+1 Timothy 6:6-7	gratitude,humility
+2 Timothy 1:7	courage,anxiety
+2 Timothy 2:13	comfort,hope
+2 Timothy 3:16-17	wisdom,purpose
+2 Timothy 4:7	patience,purpose
+Titus 3:5	forgiveness,humility
+Philemon 1:7	gratitude,comfort
+Hebrews 4:12	wisdom
+Hebrews 4:15-16	comfort,courage
+Hebrews 6:19	hope,rest
+Hebrews 10:23	hope,patience
+Hebrews 10:24-25	courage,purpose
+Hebrews 11:1	hope,courage
+Hebrews 12:1-2	patience,courage
+Hebrews 12:11	patience,wisdom
+Hebrews 13:5	provision,comfort,anxiety
+Hebrews 13:8	comfort,hope
+James 1:2-4	patience,hope
+James 1:5	wisdom,humility
+James 1:12	patience,courage
+James 1:17	gratitude,provision
+James 1:19-20	patience,wisdom
+James 3:17	wisdom,humility
+James 4:6	humility
+James 4:10	humility
+James 5:7-8	patience
+James 5:16	forgiveness,humility
+1 Peter 1:6-7	patience,hope
+1 Peter 2:9	purpose,gratitude
+1 Peter 3:9	forgiveness,patience
+1 Peter 4:10	purpose,provision
+1 Peter 5:6-7	anxiety,humility,rest
+1 Peter 5:8-9	courage,wisdom
+1 Peter 5:10	comfort,hope,patience
+2 Peter 1:3	provision,purpose
+2 Peter 3:9	patience,forgiveness
+1 John 1:9	forgiveness
+1 John 3:1	comfort,gratitude
+1 John 3:18	purpose
+1 John 4:4	courage
+1 John 4:18	anxiety,courage
+1 John 4:19	gratitude,purpose
+1 John 5:14	hope,rest
+2 John 1:6	purpose
+3 John 1:4	gratitude,purpose
+Jude 1:24	comfort,hope
+Revelation 3:20	hope,comfort
+Revelation 21:4	comfort,hope
+Revelation 21:5	hope,forgiveness
+Revelation 22:13	comfort,hope

@@ -1,0 +1,124 @@
+{
+  "": {
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/master.swiftdeps"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppDelegate.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/AppState.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/DailyVerse.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/LaunchAtLogin.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Main.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Preferences.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/FlowLayout.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PopoverRootView.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.dia"
+  },
+  "/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.dia"
+  }
+}

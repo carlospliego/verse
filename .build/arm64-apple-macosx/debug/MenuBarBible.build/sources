@@ -1,0 +1,17 @@
+/Users/carlos/src/verse/Sources/MenuBarBible/App/AppDelegate.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/AppState.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/DailyVerse.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/LaunchAtLogin.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/Main.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/VerseText.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/PopoverRootView.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/SettingsView.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/Views/VerseView.swift
