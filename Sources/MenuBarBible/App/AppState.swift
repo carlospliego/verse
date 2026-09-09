@@ -48,6 +48,16 @@ final class AppState: ObservableObject {
         }
     }
 
+    @Published var tickerSpeed: TickerSpeed {
+        didSet {
+            guard tickerSpeed != oldValue else { return }
+            UserDefaults.standard.set(tickerSpeed.rawValue, forKey: PreferenceKey.tickerSpeed)
+            // Applied on the next tick. The text does not restart and the timer is not
+            // rescheduled, so changing speed mid-verse is seamless.
+            ticker.speed = tickerSpeed
+        }
+    }
+
     // MARK: - Collaborators
 
     private(set) var bible: BibleStore?
@@ -68,6 +78,8 @@ final class AppState: ObservableObject {
         let defaults = UserDefaults.standard
         self.translationCode = defaults.string(forKey: PreferenceKey.translation) ?? BibleTranslation.defaultCode
         self.tickerEnabled = defaults.bool(forKey: PreferenceKey.tickerEnabled)
+        self.tickerSpeed = defaults.string(forKey: PreferenceKey.tickerSpeed)
+            .flatMap(TickerSpeed.init(rawValue:)) ?? .default
 
         do {
             try openStores()
@@ -180,7 +192,7 @@ final class AppState: ObservableObject {
             ticker.stop()
             return
         }
-        ticker.start(text: today.tickerText)
+        ticker.start(text: today.tickerText, speed: tickerSpeed)
     }
 }
 

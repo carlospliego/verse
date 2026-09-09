@@ -16,22 +16,17 @@ import MenuBarBibleCore
 @MainActor
 final class Ticker {
 
-    /// Advance interval.
-    ///
-    /// The spec sets two numbers that have to be satisfied together: the interval must
-    /// be **at least 300ms**, and idle CPU in ticker mode must stay **under 1%**. At the
-    /// 300ms floor this measured 1.10% on an M-series laptop, which fails the second.
-    ///
-    /// What is left at that point is not waste. Profiling shows the remaining time is
-    /// `CA::Transaction::commit` — actually drawing the changed text on screen — and
-    /// scrolling text cannot be drawn less often than it moves. So the cost is very
-    /// nearly linear in the tick rate, and the interval is the only real lever.
-    ///
-    /// 500ms measures **0.74%** sustained over ten minutes, clears the ceiling with room
-    /// to spare, and still reads as a scroll rather than a slideshow.
-    static let interval: TimeInterval = 0.5
-
     var onTitleChange: ((String) -> Void)?
+
+    /// Changing this reschedules the timer at the new interval, keeping the scroll
+    /// position — the text carries on from where it was rather than snapping back.
+    var speed: TickerSpeed = .default {
+        didSet {
+            guard speed != oldValue, timer != nil else { return }
+            cancelTimer()
+            resumeIfPossible()
+        }
+    }
 
     private var window: TickerWindow?
     private var timer: DispatchSourceTimer?
@@ -61,7 +56,8 @@ final class Ticker {
 
     /// Starts, or retargets, the ticker. Takes effect immediately with no restart —
     /// toggling the preference is meant to be instant.
-    func start(text: String) {
+    func start(text: String, speed: TickerSpeed) {
+        self.speed = speed
         window = TickerWindow(text: text)
         isRunning = true
         emit()
@@ -83,11 +79,13 @@ final class Ticker {
         guard !window.fitsWithoutScrolling else { return }
 
         let timer = DispatchSource.makeTimerSource(queue: .main)
-        // Generous leeway lets the system coalesce these wakeups with others, which is
-        // most of what keeps idle CPU down.
-        timer.schedule(deadline: .now() + Self.interval,
-                       repeating: Self.interval,
-                       leeway: .milliseconds(100))
+        // Leeway lets the system coalesce these wakeups with others, which is a real
+        // part of what keeps the cost down. Kept to a fraction of the interval so it
+        // cannot visibly stutter the scroll at the faster settings.
+        let interval = speed.interval
+        timer.schedule(deadline: .now() + interval,
+                       repeating: interval,
+                       leeway: .milliseconds(Int(interval * 1000 / 5)))
         timer.setEventHandler { [weak self] in
             guard let self else { return }
             MainActor.assumeIsolated { self.advance() }
@@ -102,6 +100,8 @@ final class Ticker {
     }
 
     private func advance() {
+        // One character. It is the smallest step the medium allows, and therefore the
+        // smoothest; speed is the interval, not the distance.
         window?.advance()
         emit()
     }

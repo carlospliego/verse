@@ -19,9 +19,12 @@ struct DailyVerse: Equatable {
         verses.map(\.text).joined(separator: " ")
     }
 
-    /// What scrolls in the menu bar: reference then text, so a glance at any moment
-    /// still says which passage this is.
+    /// What scrolls in the menu bar: the verse text alone.
+    ///
+    /// No reference. The menu bar is a peripheral-vision surface and the passage is what
+    /// belongs there; the reference is one click away in the popover, and prefixing it
+    /// meant every cycle spent seconds scrolling a citation past instead of scripture.
     var tickerText: String {
-        "\(referenceText) — \(text)"
+        text
     }
 }

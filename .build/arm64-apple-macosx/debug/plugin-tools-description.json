@@ -305,6 +305,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift"
         },
         {
@@ -356,6 +360,7 @@
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/ChapterHighlight.swift.o",
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o",
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o",
+        "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o",
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o",
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o",
         "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o",
@@ -441,6 +446,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o"
         },
         {
@@ -486,6 +495,7 @@
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift",
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift",
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift",
+        "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift",
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift",
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift",
         "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift",
@@ -848,6 +858,7 @@
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift",
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift",
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift",
+      "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift",
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift",
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift",
       "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift",
@@ -1290,6 +1301,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o"
         },
         {
@@ -1333,6 +1348,10 @@
         {
           "kind" : "file",
           "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift"
         },
         {
           "kind" : "file",
@@ -1459,6 +1478,10 @@
         {
           "kind" : "file",
           "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o"
         },
         {
           "kind" : "file",

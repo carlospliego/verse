@@ -43,6 +43,12 @@ enum PreviewRenderer {
         state.screen = .settings
         render(SettingsView().environmentObject(state), to: directory, named: "settings")
 
+        // Again with the ticker on, which is when the speed picker appears.
+        let tickerWas = state.tickerEnabled
+        state.tickerEnabled = true
+        render(SettingsView().environmentObject(state), to: directory, named: "settings-ticker-on")
+        state.tickerEnabled = tickerWas
+
         if let today = state.today {
             print("verse: \(today.referenceText) [\(today.translationCode)]")
             print("tags: \(today.tags.map(\.displayName).joined(separator: ", "))")
@@ -55,6 +61,7 @@ enum PreviewRenderer {
 
         checkTranslationSwitching(state)
         checkTickerToggle(state)
+        checkTickerSpeeds(state)
         exit(0)
     }
 
@@ -100,6 +107,35 @@ enum PreviewRenderer {
 
         print("took effect without restart: \(!on.isEmpty)")
         print("within the 30-character cap: \(on.count <= TickerWindow.maxLength)")
+    }
+
+    /// Shows what actually scrolls, at each speed, through the real `TickerWindow`.
+    private static func checkTickerSpeeds(_ state: AppState) {
+        guard let today = state.today else { return }
+        print("\n--- ticker text ---")
+        print("reference present: \(today.tickerText.contains(today.referenceText))")
+        print("text: \(today.tickerText.prefix(64))…")
+
+        for speed in TickerSpeed.allCases {
+            var window = TickerWindow(text: today.tickerText)
+            print("\n\(speed.displayName) — 1 char every \(Int(speed.interval * 1000))ms, "
+                  + String(format: "%.1f char/sec", speed.charactersPerSecond)
+                  + (speed.isWithinPowerBudget ? "" : "  (over the 1% budget)"))
+            for tick in 0..<4 {
+                print("  t=\(String(format: "%.2f", Double(tick) * speed.interval))s |\(window.title)|")
+                window.advance()
+            }
+        }
+
+        // What the loop point looks like now the middle dot is gone.
+        var wrap = TickerWindow(text: today.tickerText)
+        let tail = wrap.length - TickerWindow.maxLength / 2
+        for _ in 0..<tail { wrap.advance() }
+        print("\n--- the wrap ---")
+        for _ in 0..<6 {
+            print("  |\(wrap.title)|")
+            wrap.advance(by: 3)
+        }
     }
 
     private static func render<V: View>(_ view: V, to directory: URL, named name: String) {

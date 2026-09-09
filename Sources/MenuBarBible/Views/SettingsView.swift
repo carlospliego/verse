@@ -15,13 +15,34 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 16) {
                 translationPicker
 
-                Toggle("Show verse in the menu bar", isOn: $state.tickerEnabled)
-                    .toggleStyle(.switch)
-                    .controlSize(.small)
-                    .font(.system(size: 12))
-                    .opacity(tickerToggleIsVisible ? 1 : 0)
-                    .frame(height: tickerToggleIsVisible ? nil : 0)
-                    .clipped()
+                if tickerToggleIsVisible {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Toggle("Show verse in the menu bar", isOn: $state.tickerEnabled)
+                            .toggleStyle(.switch)
+                            .controlSize(.small)
+                            .font(.system(size: 12))
+
+                        if state.tickerEnabled {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Picker("Speed", selection: $state.tickerSpeed) {
+                                    ForEach(TickerSpeed.allCases, id: \.self) { speed in
+                                        Text(speed.displayName).tag(speed)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
+                                .controlSize(.small)
+                                .font(.system(size: 11))
+                                .labelsHidden()
+
+                                Text(state.tickerSpeed.isWithinPowerBudget
+                                     ? "Scroll speed."
+                                     : "Scroll speed. Smoother, and uses a little more power.")
+                                    .font(.system(size: 10))
+                                    .foregroundStyle(.tertiary)
+                            }
+                        }
+                    }
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Toggle("Launch at login", isOn: $launchAtLogin)

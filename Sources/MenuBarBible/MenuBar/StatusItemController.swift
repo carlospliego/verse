@@ -176,6 +176,25 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
             let ticker = item("Show Verse in Menu Bar", #selector(menuToggleTicker))
             ticker.state = state.tickerEnabled ? .on : .off
             menu.addItem(ticker)
+
+            // Only worth showing when there is something to set the speed of.
+            if state.tickerEnabled {
+                let speeds = NSMenuItem(title: "Ticker Speed", action: nil, keyEquivalent: "")
+                let submenu = NSMenu()
+                submenu.autoenablesItems = false
+                for speed in TickerSpeed.allCases {
+                    let choice = item(speed.displayName, #selector(menuSelectTickerSpeed(_:)))
+                    choice.representedObject = speed.rawValue
+                    choice.state = speed == state.tickerSpeed ? .on : .off
+                    // Smoother costs power, and the menu should not hide that.
+                    if !speed.isWithinPowerBudget {
+                        choice.toolTip = "Smoother scrolling, a little more power."
+                    }
+                    submenu.addItem(choice)
+                }
+                speeds.submenu = submenu
+                menu.addItem(speeds)
+            }
         }
 
         let launch = item("Launch at Login", #selector(menuToggleLaunchAtLogin))
@@ -218,6 +237,12 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
 
     @objc private func menuToggleTicker() {
         state.tickerEnabled.toggle()
+    }
+
+    @objc private func menuSelectTickerSpeed(_ sender: NSMenuItem) {
+        guard let raw = sender.representedObject as? String,
+              let speed = TickerSpeed(rawValue: raw) else { return }
+        state.tickerSpeed = speed
     }
 
     @objc private func menuToggleLaunchAtLogin() {

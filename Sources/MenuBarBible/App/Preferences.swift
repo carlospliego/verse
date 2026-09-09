@@ -6,6 +6,7 @@ import SwiftUI
 enum PreferenceKey {
     static let translation = "translationCode"
     static let tickerEnabled = "tickerEnabled"
+    static let tickerSpeed = "tickerSpeed"
 }
 
 /// Whether the ticker toggle appears in settings.

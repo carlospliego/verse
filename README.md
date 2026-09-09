@@ -77,8 +77,14 @@ whichever translation the reader selects.
 to expand into the surrounding chapter, with the verse highlighted.
 
 **Right-click** (or control-click) for a menu: today's reference, jump straight to the
-verse or the chapter, a translation submenu, the ticker and launch-at-login toggles,
-Settings, and Quit.
+verse or the chapter, a translation submenu, the ticker toggle and its speed submenu,
+launch-at-login, Settings, and Quit.
+
+**Ticker mode** scrolls the verse text across the menu bar in place of the icon — the
+text alone, no reference. Speed is Leisurely / Steady / Brisk, and it sets how often the
+text advances; the step is always one character, which is as smooth as menu bar text can
+be. Faster means more redraws and so more power, and the settings say which ones exceed
+the 1% budget §7.1 asks for. Leisurely stays inside it, and is the default.
 
 There is no Dock icon and no window — the status item is the whole visible app.
 

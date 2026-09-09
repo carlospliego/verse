@@ -30,6 +30,13 @@
     "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swiftdeps",
     "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.dia"
   },
+  "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.dia"
+  },
   "/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift": {
     "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.d",
     "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o",

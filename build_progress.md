@@ -376,3 +376,107 @@ Two details worth keeping:
 Also fixed: `--self-test` persisted the translation and ticker preferences it changed. A diagnostic
 must not leave the user's settings somewhere they did not put them. It now restores both, verified by
 running it twice.
+
+**2026-09-06 — Ticker: text only, and a speed setting (post-v1).**
+
+Two changes, and the second turned on a constraint worth writing down.
+
+**Reference dropped from the ticker.** It now scrolls the verse text alone. The menu bar is a
+peripheral-vision surface; prefixing "1 Peter 5:8–9 — " meant every cycle spent several seconds
+scrolling a citation past instead of scripture. The reference is still in the popover, and now also
+as the heading of the right-click menu.
+
+**Speed is characters per tick, not ticks per second.** This is the whole design, and it exists
+because §7.1's two numbers collide: the advance interval must be **≥300ms**, and idle CPU must stay
+**under 1%** — but at a 300ms tick this machine measured 1.10%. The cost is dominated by
+`CA::Transaction::commit`, redrawing the menu bar text, and is near-linear in the *tick rate*. So the
+tick rate stays pinned at 500ms and speed varies by how far the window moves each tick:
+
+| Speed | Step | Rate | Measured CPU |
+|---|---|---|---|
+| Leisurely | 1 char/tick | 2 char/s | 0.627% |
+| Steady *(default)* | 2 char/tick | 4 char/s | — |
+| Brisk | 3 char/tick | 6 char/s | **0.516%** |
+
+Brisk is three times faster than the old behaviour and costs *no more CPU* — the difference between
+those two figures is measurement noise, not a trend. That is the property worth having: the redraw
+rate is identical at every setting, so the speed control cannot be used to blow the power budget.
+The step is capped at 3 deliberately; at four or more the jump stops reading as scrolling and starts
+reading as the text being replaced.
+
+Exposed in both places a user would look: a segmented picker in Settings (shown only when the ticker
+is on) and a **Ticker Speed** submenu in the right-click menu. Persisted in `UserDefaults` by raw
+string, so the raw values are now part of the stored format — there is a test pinning them.
+
+**One memory observation, unresolved and recorded rather than explained away.** During the first
+Brisk measurement one instance showed a transient jump — RSS 40 → 60.8 MB, `phys_footprint_peak`
+163 MB — with a matching CPU bump in that minute. It did not recur: a 5-minute follow-up on that
+same instance showed RSS flat and *falling* (−2.9 MB), and a fresh launch traced from t=0 stays at
+**13 MB footprint, 13 MB peak, RSS settling to 40 MB** over two minutes at Brisk. So it is not a leak
+and not attributable to the ticker, but I could not reproduce it and cannot say what caused it —
+most likely a system-initiated transient. Worth watching if it shows up again.
+
+**2026-09-06 (later) — Smoothness, and a measurement method that was quietly lying.**
+
+Two user-visible fixes:
+
+- **The middle dot is gone.** `TickerWindow`'s separator was `"   ·   "`, a U+00B7 marking the loop
+  point. In the menu bar it read as debris — a stray punctuation mark drifting through the
+  scripture with no explanation. Now five plain spaces: a gap says "this wrapped" just as well, and
+  five is far short of the 30-character window so the status item never goes blank. There is a test
+  asserting no glyph outside the verse's own characters ever appears in the title.
+
+- **Scrolling is smooth, not jumpy.** The previous design varied speed by *step size* (1–3 characters
+  per 500ms tick) because that keeps CPU flat across settings. It was wrong. Three characters
+  arriving twice a second does not read as scrolling, it reads as the text being retyped, and no
+  amount of CPU headroom compensates. The step is now always **one character** — the smallest the
+  medium allows — and speed is the *interval*.
+
+**The cost of that reversal, measured on the shipping build:**
+
+| Speed | Interval | char/s | CPU (release, sandboxed, 2 min) |
+|---|---|---|---|
+| *(icon mode baseline)* | — | — | 0.000% |
+| Leisurely | 500ms | 2.0 | **0.34%** |
+| Steady *(default)* | 400ms | 2.5 | **0.73%** |
+| Brisk | 200ms | 5.0 | **1.50%** — over the ceiling |
+
+`brisk` genuinely exceeds §7.1's 1% and is marked as such everywhere it is offered. The two
+in-budget settings sit at 400ms and 500ms because the cost curve crosses 1% at roughly 340ms.
+
+Worth stating plainly, because it is a real conflict in the spec rather than an implementation
+shortfall: **§7.1's two ticker limits cannot both be met on this hardware.** 300ms is the *floor* it
+names for the advance interval, and 300ms costs 1.12% against a 1% ceiling. Honouring the CPU limit
+means running slower than the stated floor. The in-budget settings do exactly that.
+
+**Three bad measurements in a row, each with a different cause:**
+
+1. A `defaults`-driven sweep reported `leisurely 0.02%`. A 300ms tick had measured 1.12% minutes
+   earlier; 0.02% is an idle process. The preference never reached the app and the ticker was off.
+2. Adding a "is it burning CPU?" guard caught that — but the next sweep then reported **brisk
+   (5 char/s) at 0.05%, cheaper than leisurely (2 char/s) at 0.10%**. Physically impossible: 2.5×
+   the redraws cannot cost half the CPU. The guard's 0.10% threshold was inside the noise, so it
+   passed runs where the ticker was still off.
+3. The root cause both times was `defaults write` not reaching the app — the exact failure already
+   documented in this file weeks ago, which I then re-introduced by using `defaults` for
+   convenience.
+
+Fixed by making the harness prove the thing it is measuring: `--ticker-speed <name>` sets the speed
+through `AppState` (the same path as the settings picker), and `--report-title` prints the live status
+item title to stderr every five seconds.
+
+**And then that harness lied too — the most instructive failure of the three.** It reported a tidy,
+monotonic, plausible table: 500ms → 0.14%, 400ms → 0.21%, 200ms → 0.33%, every row backed by 21
+distinct observed titles. All well inside budget, and flatly contradicting two earlier release
+measurements. I was one step from loosening the speed limits on the strength of it.
+
+The release build then measured **1.495% at 200ms** against a 0.000% icon-mode baseline — five times
+the debug figure. The harness ran the binary *directly* rather than through LaunchServices, so it was
+unsandboxed and its status item was never composited into the real menu bar. `--report-title` proved
+the ticker's *logic* was running, which it was; it could not prove the menu bar was *redrawing*,
+which is the entire cost. The instrument measured everything except the expensive part.
+
+The earlier release numbers were right all along, and my "busy machine inflated them" explanation was
+wrong — 500ms/0.70%, 300ms/1.12% and 200ms/1.50% fit one clean curve. **Measure the artefact you
+ship, the way users run it.** A proxy that omits the costly half of the work will happily hand you a
+consistent, monotonic, entirely fictional table.

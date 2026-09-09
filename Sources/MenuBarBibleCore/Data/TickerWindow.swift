@@ -14,8 +14,13 @@ public struct TickerWindow {
     private let characters: [Character]
     public private(set) var offset = 0
 
-    public init(text: String, separator: String = "   \u{00B7}   ") {
-        // Padding so the end of the passage does not run straight into its start.
+    /// Default separator: plain spaces, no glyph.
+    ///
+    /// A middle dot lived here to mark the loop point and it read as debris in the menu
+    /// bar — a stray punctuation mark drifting through the scripture with no explanation.
+    /// A gap says "this has wrapped" just as well. Five spaces: wide enough to read as a
+    /// break, far short of the 30-character window, so the menu bar never goes blank.
+    public init(text: String, separator: String = "     ") {
         self.characters = Array(TickerWindow.normalize(text) + separator)
     }
 
@@ -38,9 +43,10 @@ public struct TickerWindow {
         return slice
     }
 
-    public mutating func advance() {
-        guard !characters.isEmpty else { return }
-        offset = (offset + 1) % characters.count
+    /// Moves the window along by `steps` characters, wrapping at the end.
+    public mutating func advance(by steps: Int = 1) {
+        guard !characters.isEmpty, steps > 0 else { return }
+        offset = (offset + steps) % characters.count
     }
 
     /// Collapses runs of whitespace so the scroll advances one visible character at a
