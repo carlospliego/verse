@@ -34,9 +34,7 @@ struct SettingsView: View {
                                 .font(.system(size: 11))
                                 .labelsHidden()
 
-                                Text(state.tickerSpeed.isWithinPowerBudget
-                                     ? "Scroll speed."
-                                     : "Scroll speed. Smoother, and uses a little more power.")
+                                Text("Scroll speed.")
                                     .font(.system(size: 10))
                                     .foregroundStyle(.tertiary)
                             }

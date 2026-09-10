@@ -81,10 +81,16 @@ verse or the chapter, a translation submenu, the ticker toggle and its speed sub
 launch-at-login, Settings, and Quit.
 
 **Ticker mode** scrolls the verse text across the menu bar in place of the icon — the
-text alone, no reference. Speed is Leisurely / Steady / Brisk, and it sets how often the
-text advances; the step is always one character, which is as smooth as menu bar text can
-be. Faster means more redraws and so more power, and the settings say which ones exceed
-the 1% budget §7.1 asks for. Leisurely stays inside it, and is the default.
+text alone, no reference. Speed is Leisurely / Steady / Brisk (20 / 35 / 55 points per
+second).
+
+At rest the verse sits still, showing its opening words; it scrolls only while the
+pointer is over it, and returns to the start when the pointer leaves.
+
+The scroll is a Core Animation translation of a text layer, not a timer rewriting the
+status item's title. That matters twice over: motion is continuous rather than stepping a
+whole character at a time, and the interpolation happens in the window server, so the app
+does no per-frame work and speed no longer trades against power.
 
 There is no Dock icon and no window — the status item is the whole visible app.
 

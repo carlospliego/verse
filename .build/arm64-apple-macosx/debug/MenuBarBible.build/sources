@@ -6,8 +6,7 @@
 /Users/carlos/src/verse/Sources/MenuBarBible/App/Preferences.swift
 /Users/carlos/src/verse/Sources/MenuBarBible/App/PreviewRenderer.swift
 /Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemController.swift
-/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift
-/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift
+/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/TickerView.swift
 /Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift
 /Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/FlowLayout.swift
 /Users/carlos/src/verse/Sources/MenuBarBible/Views/Components/TagChip.swift

@@ -22,11 +22,17 @@
     "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport.swiftdeps",
     "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TestSupport.dia"
   },
-  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift": {
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerWindowTests.dia"
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerLayoutTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerLayoutTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerLayoutTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerLayoutTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerLayoutTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerSpeedTests.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerSpeedTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerSpeedTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerSpeedTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/TickerSpeedTests.dia"
   },
   "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift": {
     "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBibleCoreTests.build/UserStoreTests.swift.o",

@@ -61,7 +61,7 @@ enum PreviewRenderer {
 
         checkTranslationSwitching(state)
         checkTickerToggle(state)
-        checkTickerSpeeds(state)
+        checkTicker(state, to: directory)
         exit(0)
     }
 
@@ -91,51 +91,112 @@ enum PreviewRenderer {
         print("text actually differs: \(texts.count == state.availableTranslations.count)")
     }
 
-    /// The toggle must take effect immediately, with no restart. Driven through the
-    /// same property the settings switch is bound to.
+    /// The toggle must take effect immediately, with no restart.
     private static func checkTickerToggle(_ state: AppState) {
         print("\n--- ticker toggle ---")
+        let was = state.tickerEnabled
         state.tickerEnabled = false
-        print("off -> title '\(StatusItemTitle.shared.value)' (empty means icon only)")
-
+        print("off -> tickerEnabled=\(state.tickerEnabled)")
         state.tickerEnabled = true
-        let on = StatusItemTitle.shared.value
-        print("on  -> title '\(on)' (\(on.count) chars)")
-
-        state.tickerEnabled = false
-        print("off -> title '\(StatusItemTitle.shared.value)'")
-
-        print("took effect without restart: \(!on.isEmpty)")
-        print("within the 30-character cap: \(on.count <= TickerWindow.maxLength)")
+        print("on  -> tickerEnabled=\(state.tickerEnabled)")
+        state.tickerEnabled = was
+        print("restored -> tickerEnabled=\(state.tickerEnabled)")
     }
 
-    /// Shows what actually scrolls, at each speed, through the real `TickerWindow`.
-    private static func checkTickerSpeeds(_ state: AppState) {
+    /// Renders the real `TickerView` and reports what it produced.
+    ///
+    /// This is the first version of the ticker whose *appearance* can be checked without
+    /// looking at the menu bar: the view draws into a bitmap, so a PNG of the actual
+    /// scrolling text can be written out and inspected.
+    private static func checkTicker(_ state: AppState, to directory: URL) {
         guard let today = state.today else { return }
-        print("\n--- ticker text ---")
+        print("\n--- ticker ---")
         print("reference present: \(today.tickerText.contains(today.referenceText))")
-        print("text: \(today.tickerText.prefix(64))…")
+        print("text: \(today.tickerText.prefix(60))…")
+        print("item width: \(Int(TickerView.preferredWidth))pt for "
+              + "\(TickerLayout.visibleCharacters) chars of \(TickerView.font.displayName ?? "?")")
 
-        for speed in TickerSpeed.allCases {
-            var window = TickerWindow(text: today.tickerText)
-            print("\n\(speed.displayName) — 1 char every \(Int(speed.interval * 1000))ms, "
-                  + String(format: "%.1f char/sec", speed.charactersPerSecond)
-                  + (speed.isWithinPowerBudget ? "" : "  (over the 1% budget)"))
-            for tick in 0..<4 {
-                print("  t=\(String(format: "%.2f", Double(tick) * speed.interval))s |\(window.title)|")
-                window.advance()
+        let looped = TickerLayout.looped(today.tickerText)
+        print("looped text doubles cleanly: \(looped.count == (TickerLayout.normalize(today.tickerText).count + TickerLayout.gap.count) * 2)")
+        print("no stray glyph at the seam: \(!looped.contains("\u{00B7}"))")
+
+        let height = NSStatusBar.system.thickness
+
+        // Checked in both appearances, each against a contrasting ground.
+        //
+        // The first attempt at this rendered white-on-white and reported "ink=0.0%",
+        // which reads as a broken ticker; the ticker was fine and the check was wrong.
+        // A menu bar item has no fixed colour — `labelColor` resolves to near-white in
+        // dark mode and near-black in light — so a single background can only ever
+        // verify one of the two.
+        for (name, appearance) in [("light", NSAppearance.Name.aqua), ("dark", .darkAqua)] {
+            let ground: NSColor = name == "light" ? .white : .black
+            for speed in TickerSpeed.allCases {
+                let view = TickerView(frame: NSRect(x: 0, y: 0, width: TickerView.preferredWidth, height: height))
+                view.appearance = NSAppearance(named: appearance)
+                view.configure(text: today.tickerText, speed: speed)
+                view.layoutSubtreeIfNeeded()
+
+                var ink = 0.0
+                if let image = view.snapshot(background: ground),
+                   let data = image.tiffRepresentation,
+                   let rep = NSBitmapImageRep(data: data) {
+                    ink = Self.inkedFraction(of: rep, against: ground)
+                    if let png = rep.representation(using: .png, properties: [:]) {
+                        try? png.write(to: directory.appendingPathComponent("ticker-\(name)-\(speed.rawValue).png"))
+                    }
+                }
+
+                print("\(name)/\(speed.displayName): \(Int(speed.pointsPerSecond))pt/s"
+                      + "  animating=\(view.isAnimating)"
+                      + String(format: "  ink=%.1f%%", ink * 100))
+                if ink == 0 { print(view.diagnosticDescription) }
             }
         }
 
-        // What the loop point looks like now the middle dot is gone.
-        var wrap = TickerWindow(text: today.tickerText)
-        let tail = wrap.length - TickerWindow.maxLength / 2
-        for _ in 0..<tail { wrap.advance() }
-        print("\n--- the wrap ---")
-        for _ in 0..<6 {
-            print("  |\(wrap.title)|")
-            wrap.advance(by: 3)
+        // The resting state is the point of the feature: still until hovered.
+        do {
+            let view = TickerView(frame: NSRect(x: 0, y: 0, width: TickerView.preferredWidth, height: height))
+            view.configure(text: today.tickerText, speed: .steady)
+            print("at rest:      animating=\(view.isAnimating) offset=\(Int(view.diagnosticScrollOffset))pt")
+
+            view.diagnosticSetHovering(true)
+            print("hovering:     animating=\(view.isAnimating)")
+            Thread.sleep(forTimeInterval: 1.0)
+            let moved = view.diagnosticScrollOffset
+            print("after 1s:     offset=\(Int(moved))pt (expect about \(Int(TickerSpeed.steady.pointsPerSecond)))")
+
+            view.diagnosticSetHovering(false)
+            print("left:         animating=\(view.isAnimating) offset=\(Int(view.diagnosticScrollOffset))pt")
         }
+
+        // Pausing must actually stop the layer, or a sleeping display keeps compositing.
+        let view = TickerView(frame: NSRect(x: 0, y: 0, width: TickerView.preferredWidth, height: height))
+        view.configure(text: today.tickerText, speed: .steady)
+        view.pauseAnimation()
+        print("paused, still installed: \(view.isAnimating)")
+        view.resumeAnimation()
+        print("resumed: \(view.isAnimating)")
+    }
+
+    /// Fraction of pixels that differ from the background — i.e. whether text drew.
+    ///
+    /// Compared against the ground it was rendered on rather than against "dark",
+    /// because menu bar text is light in dark mode and dark in light mode.
+    private static func inkedFraction(of rep: NSBitmapImageRep, against ground: NSColor) -> Double {
+        let groundBrightness = ground.usingColorSpace(.deviceRGB)?.brightnessComponent ?? 0
+        var inked = 0
+        var total = 0
+        for y in stride(from: 0, to: rep.pixelsHigh, by: 2) {
+            for x in stride(from: 0, to: rep.pixelsWide, by: 2) {
+                total += 1
+                if let colour = rep.colorAt(x: x, y: y)?.usingColorSpace(.deviceRGB),
+                   abs(colour.brightnessComponent - groundBrightness) > 0.25 {
+                    inked += 1
+                }
+            }
+        }
+        return total == 0 ? 0 : Double(inked) / Double(total)
     }
 
     private static func render<V: View>(_ view: V, to directory: URL, named name: String) {

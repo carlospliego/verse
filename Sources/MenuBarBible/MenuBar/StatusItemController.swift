@@ -8,24 +8,26 @@ import MenuBarBibleCore
 /// `MenuBarExtra` was the starting point and is the right default — but it renders its
 /// label through SwiftUI, and the ticker rewrites that label continuously. Measured on
 /// this machine, that cost about 3% CPU sustained, against a hard requirement of under
-/// 1%. Each tick walked a SwiftUI update, an `NSHostingView` re-measure, and a menu bar
+/// 1%. Each update walked a SwiftUI update, an `NSHostingView` re-measure, and a menu bar
 /// re-layout, and none of that gets cheaper by being asked more politely.
 ///
-/// So the status item drops to AppKit, where a tick is one `NSStatusBarButton` title
-/// assignment. The popover content stays SwiftUI — `PopoverRootView` and everything
-/// under it is unchanged.
+/// So the status item drops to AppKit. The popover content stays SwiftUI —
+/// `PopoverRootView` and everything under it is unchanged.
+///
+/// Ticker mode is a `TickerView` layered over the button: a Core Animation marquee, not
+/// a timer retitling the item. See that type for why.
 @MainActor
 final class StatusItemController: NSObject, NSPopoverDelegate {
     private let state: AppState
     private let statusItem: NSStatusItem
     private let popover = NSPopover()
     private var cancellables = Set<AnyCancellable>()
+    private var systemObservers: [NSObjectProtocol] = []
+    private var popoverResizeObserver: NSObjectProtocol?
 
-    /// Tracks the icon-only / ticker transition so per-tick work stays to the title.
-    private var wasTicking = false
+    /// The scrolling verse, created the first time the ticker is switched on.
+    private var tickerView: TickerView?
 
-    /// Set once and reused: rebuilding the symbol image on every tick would give back
-    /// the cost this class exists to avoid.
     private let icon: NSImage? = {
         let image = NSImage(systemSymbolName: "book.closed",
                             accessibilityDescription: "Menu Bar Bible")
@@ -40,7 +42,17 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
 
         configureButton()
         configurePopover()
-        observeTitle()
+        observeTickerState()
+        observeSystemSleepAndLock()
+    }
+
+    deinit {
+        let workspace = NSWorkspace.shared.notificationCenter
+        let distributed = DistributedNotificationCenter.default()
+        for observer in systemObservers {
+            workspace.removeObserver(observer)
+            distributed.removeObserver(observer)
+        }
     }
 
     private func configureButton() {
@@ -63,54 +75,80 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
         )
     }
 
-    /// The whole per-tick path: a title arrives, a button gets a string.
-    private func observeTitle() {
-        StatusItemTitle.shared.$value
-            .removeDuplicates()
-            .sink { [weak self] title in
-                self?.apply(title: title)
+    // MARK: - Ticker
+
+    /// Watches the three things that decide what the status item shows.
+    private func observeTickerState() {
+        state.$tickerEnabled
+            .combineLatest(state.$tickerSpeed, state.$today)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] enabled, speed, today in
+                self?.applyTicker(enabled: enabled, speed: speed, today: today)
             }
             .store(in: &cancellables)
     }
 
-    /// Assigns the title, and does everything it can to keep that from cascading.
-    ///
-    /// A status item set to `variableLength` re-measures itself whenever its title
-    /// changes, and a status item that changes width makes the menu bar re-lay out every
-    /// item in it — on every tick, forever. So while the ticker runs the width is pinned
-    /// to what a full window needs and the item stops resizing at all.
-    private func apply(title: String) {
+    private func applyTicker(enabled: Bool, speed: TickerSpeed, today: DailyVerse?) {
         guard let button = statusItem.button else { return }
-        let isTicking = !title.isEmpty
 
-        // Only on the transition. Assigning these per tick would invalidate layout when
-        // nothing about them had changed.
-        if isTicking != wasTicking {
-            // The icon comes off while the ticker runs, and this is the single largest
-            // saving in here. `book.closed` is an SF Symbol — a vector image resolved
-            // per redraw — and setting the title redraws the button. Profiling showed
-            // the tick dominated by `_resolvedImage` →
-            // `_imageWithFallbackSymbolConfiguration:` → `bestRepresentationForHints:`:
-            // the symbol was being re-resolved on every tick to draw an icon that
-            // never changed. Scrolling text does not need a book beside it saying it is
-            // a book.
-            button.image = isTicking ? nil : icon
-            button.imagePosition = isTicking ? .noImage : .imageOnly
-            statusItem.length = isTicking ? tickerWidth(for: button) : NSStatusItem.variableLength
-            wasTicking = isTicking
+        guard enabled, let today, !today.tickerText.isEmpty else {
+            tickerView?.removeFromSuperview()
+            tickerView = nil
+            button.image = icon
+            button.imagePosition = .imageOnly
+            statusItem.length = NSStatusItem.variableLength
+            return
         }
-        button.title = title
+
+        // The icon comes off while the verse scrolls. It was also the largest single
+        // cost in the old timer-driven ticker: `book.closed` is an SF Symbol, a vector
+        // image re-resolved on every redraw, and retitling the button redrew it. Beyond
+        // that, scrolling text does not need a book beside it saying it is a book.
+        button.image = nil
+        button.title = ""
+        button.imagePosition = .noImage
+        statusItem.length = TickerView.preferredWidth
+
+        let view: TickerView
+        if let existing = tickerView {
+            view = existing
+        } else {
+            view = TickerView(frame: button.bounds)
+            view.autoresizingMask = [.width, .height]
+            button.addSubview(view)
+            view.installTracking(on: button)
+            tickerView = view
+        }
+        view.frame = button.bounds
+        view.configure(text: today.tickerText, speed: speed)
     }
 
-    /// Width for a full ticker window, measured once from the button's own font.
+    /// Freezes the scroll when nothing can see it.
     ///
-    /// Measured at the cap rather than per-tick, so a narrow line of text does not
-    /// shrink the item and set the menu bar re-laying out again.
-    private func tickerWidth(for button: NSStatusBarButton) -> CGFloat {
-        let font = button.font ?? NSFont.monospacedSystemFont(ofSize: 12, weight: .regular)
-        let sample = String(repeating: "M", count: TickerWindow.maxLength)
-        let textWidth = (sample as NSString).size(withAttributes: [.font: font]).width
-        return textWidth + 16   // padding either side of the text
+    /// There is no timer to stop any more, but a paused layer is one the window server
+    /// stops compositing, which is what the requirement is really about.
+    private func observeSystemSleepAndLock() {
+        let workspace = NSWorkspace.shared.notificationCenter
+        let distributed = DistributedNotificationCenter.default()
+
+        func observe(_ name: NSNotification.Name, on center: NotificationCenter, pause: Bool) {
+            systemObservers.append(center.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
+                MainActor.assumeIsolated {
+                    if pause { self?.tickerView?.pauseAnimation() }
+                    else { self?.tickerView?.resumeAnimation() }
+                }
+            })
+        }
+
+        observe(NSWorkspace.screensDidSleepNotification, on: workspace, pause: true)
+        observe(NSWorkspace.screensDidWakeNotification, on: workspace, pause: false)
+        observe(NSWorkspace.willSleepNotification, on: workspace, pause: true)
+        observe(NSWorkspace.didWakeNotification, on: workspace, pause: false)
+
+        // Screen lock has no public AppKit notification; these distributed names are the
+        // long-standing way to observe it.
+        observe(.init("com.apple.screenIsLocked"), on: distributed, pause: true)
+        observe(.init("com.apple.screenIsUnlocked"), on: distributed, pause: false)
     }
 
     // MARK: - Clicks
@@ -186,10 +224,6 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
                     let choice = item(speed.displayName, #selector(menuSelectTickerSpeed(_:)))
                     choice.representedObject = speed.rawValue
                     choice.state = speed == state.tickerSpeed ? .on : .off
-                    // Smoother costs power, and the menu should not hide that.
-                    if !speed.isWithinPowerBudget {
-                        choice.toolTip = "Smoother scrolling, a little more power."
-                    }
                     submenu.addItem(choice)
                 }
                 speeds.submenu = submenu
@@ -258,6 +292,60 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
     // MARK: - Popover
 
     #if DEBUG
+    /// What the status item is actually doing, for measurement harnesses.
+    var diagnosticTickerStatus: String {
+        guard let view = tickerView else { return "ticker=off (icon mode)" }
+        let onScreen = view.superview != nil && view.window != nil
+        var line = "ticker=on animating=\(view.isAnimating) inWindow=\(onScreen) "
+                 + "tracking=\(view.diagnosticHasTracking) "
+                 + "offset=\(Int(view.diagnosticScrollOffset))pt"
+               if let button = statusItem.button, let window = button.window {
+            let r = window.convertToScreen(button.convert(button.bounds, to: nil))
+            let pointer = NSEvent.mouseLocation
+            line += " buttonRect=\(Int(r.midX)),\(Int(r.midY))"
+            line += " pointer=\(Int(pointer.x)),\(Int(pointer.y))"
+            line += " inside=\(r.contains(pointer))"
+        }
+        return line
+    }
+
+    func diagnosticOpenPopover() { open(on: .verse) }
+
+    /// Where the popover actually landed, relative to the menu bar.
+    ///
+    /// `NSPopover` exposes no control over its distance from the anchor, so the only
+    /// way to know whether a change moved it is to read back the window it opened.
+    var diagnosticPopoverGeometry: String {
+        guard let button = statusItem.button,
+              let statusWindow = button.window,
+              let popoverWindow = popover.contentViewController?.view.window,
+              let screen = statusWindow.screen ?? NSScreen.main
+        else { return "[self-test] geometry unavailable" }
+
+        let gap = screen.visibleFrame.maxY - popoverWindow.frame.maxY
+        var out: [String] = []
+        // visibleFrame is authoritative for where the menu bar actually ends;
+        // NSStatusBar.thickness is the item height and understates it on a notched
+        // display, where the menu bar is taller than the items inside it.
+        let menuBarHeight = screen.frame.maxY - screen.visibleFrame.maxY
+        out.append("[self-test] screen top \(Int(screen.frame.maxY)) statusThickness \(Int(NSStatusBar.system.thickness))pt realMenuBar \(Int(menuBarHeight))pt")
+        out.append("[self-test] visibleFrame maxY \(Int(screen.visibleFrame.maxY))")
+        out.append("[self-test] statusWindow minY \(Int(statusWindow.frame.minY))")
+        let buttonInScreen = statusWindow.convertToScreen(button.convert(button.bounds, to: nil))
+        out.append("[self-test] button in screen: \(rect(buttonInScreen))")
+        out.append("[self-test] popoverWindow: \(rect(popoverWindow.frame))")
+        out.append("[self-test] popover contentSize: \(popover.contentSize)")
+        let contentInScreen = popoverWindow.convertToScreen(
+            popoverWindow.contentView?.convert(popoverWindow.contentView?.bounds ?? .zero, to: nil) ?? .zero)
+        out.append("[self-test] popover contentView in screen: \(rect(contentInScreen))")
+        out.append("[self-test] button.bottom -> popover.top: \(Int(buttonInScreen.minY - popoverWindow.frame.maxY))pt")
+        out.append("[self-test] gap below menu bar: \(Int(gap))pt")
+        return out.joined(separator: "\n")
+    }
+
+    private func rect(_ r: NSRect) -> String {
+        "x\(Int(r.minX)) y\(Int(r.minY)) w\(Int(r.width)) h\(Int(r.height)) maxY\(Int(r.maxY))"
+    }
     /// Drives the status item the way a click does, and reports what happened. Used to
     /// check the popover end to end without a clickable session.
     func selfTest() {
@@ -270,6 +358,7 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
         handleClick()
         let view = popover.contentViewController?.view
         print("[self-test] popover shown: \(popover.isShown)")
+        print(diagnosticPopoverGeometry)
         print("[self-test] content size: \(view.map { "\(Int($0.frame.width))x\(Int($0.frame.height))" } ?? "nil")")
         handleClick()
         print("[self-test] popover closed: \(!popover.isShown)")
@@ -312,12 +401,62 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
         popover.isShown ? popover.performClose(nil) : open(on: .verse)
     }
 
+    /// How far below the menu bar the popover should sit.
+    ///
+    /// Left to itself `NSPopover` opens **81pt** below the menu bar on this machine,
+    /// which reads as detached from the thing it belongs to. Native menu bar popovers
+    /// sit a few points down.
+    static var desiredGapBelowMenuBar: CGFloat = 6
+
+    /// Switching between the verse, chapter and settings screens resizes the popover,
+    /// and `NSPopover` re-positions itself when it does — undoing the lift. Re-applying
+    /// on resize keeps it put; the correction is zero when nothing has moved.
+    private func observePopoverResize() {
+        guard popoverResizeObserver == nil,
+              let window = popover.contentViewController?.view.window else { return }
+        popoverResizeObserver = NotificationCenter.default.addObserver(
+            forName: NSWindow.didResizeNotification, object: window, queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated { self?.liftPopoverIfNeeded() }
+        }
+    }
+
     private func open(on screen: PopoverScreen) {
         guard let button = statusItem.button else { return }
         state.screen = screen
         if !popover.isShown {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+            liftPopoverIfNeeded()
+            observePopoverResize()
         }
         popover.contentViewController?.view.window?.makeKey()
+    }
+
+    /// Pulls the popover up so it sits just under the menu bar.
+    ///
+    /// `NSPopover` offers no API for its distance from the anchor. Raising the
+    /// positioning rect does not work — it clamps, and past a point refuses to show at
+    /// all — so the window is moved after the fact, in the same turn as `show` and
+    /// before it is drawn, so there is no visible jump.
+    ///
+    /// The distance is *measured* rather than hard-coded. An 81pt constant happened to
+    /// be right on this display, but the default spacing and the menu bar's own height
+    /// both vary — a notched display's menu bar is 34pt where `NSStatusBar.thickness`
+    /// still reports 22 — so instead this reads back where the window actually landed
+    /// and closes the difference. It is also self-limiting: once the gap is right the
+    /// correction is zero, which makes it safe to call repeatedly.
+    private func liftPopoverIfNeeded() {
+        guard let window = popover.contentViewController?.view.window,
+              let screen = window.screen ?? statusItem.button?.window?.screen ?? NSScreen.main
+        else { return }
+
+        let gap = screen.visibleFrame.maxY - window.frame.maxY
+        let correction = gap - Self.desiredGapBelowMenuBar
+
+        // Only ever pull it up, and only when the error is worth a move. Pushing it down
+        // is not this method's job, and a sub-point correction is just jitter.
+        guard correction > 1 else { return }
+        window.setFrameOrigin(NSPoint(x: window.frame.origin.x,
+                                      y: window.frame.origin.y + correction))
     }
 }

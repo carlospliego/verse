@@ -23,12 +23,19 @@
     "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.swiftdeps",
     "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.dia"
   },
-  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerWindowTests.swift": {
-    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.d",
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.dia"
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerLayoutTests.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests.dia"
+  },
+  "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/TickerSpeedTests.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests.dia"
   },
   "/Users/carlos/src/verse/Tests/MenuBarBibleCoreTests/UserStoreTests.swift": {
     "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/UserStoreTests.d",

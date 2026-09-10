@@ -52,17 +52,11 @@
     "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemController.swiftdeps",
     "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemController.dia"
   },
-  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift": {
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemTitle.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemTitle~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemTitle.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/StatusItemTitle.dia"
-  },
-  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift": {
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/Ticker.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/Ticker~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/Ticker.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/Ticker.dia"
+  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/TickerView.swift": {
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/TickerView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/TickerView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/TickerView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/TickerView.dia"
   },
   "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift": {
     "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/release/MenuBarBible.build/ChapterView.swift.o",

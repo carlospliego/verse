@@ -480,3 +480,128 @@ The earlier release numbers were right all along, and my "busy machine inflated 
 wrong — 500ms/0.70%, 300ms/1.12% and 200ms/1.50% fit one clean curve. **Measure the artefact you
 ship, the way users run it.** A proxy that omits the costly half of the work will happily hand you a
 consistent, monotonic, entirely fictional table.
+
+**2026-09-08 — Smooth scrolling: Core Animation instead of a timer.**
+
+The character-stepping ticker was still jumpy at every speed, and it was never going to stop being
+jumpy. The reason is arithmetic, not tuning: **the smallest step available to text is one character
+— about seven points in the menu bar font — so every advance is a seven-point jump however often it
+fires.** Raising the rate buys more jumps per second, not smaller ones. I had already spent two
+rounds tuning the wrong variable.
+
+Replaced the whole mechanism. `TickerView` puts a `CATextLayer` over the status button and gives the
+window server one instruction: translate at a constant rate, forever. Interpolation happens outside
+this process, in fractions of a point, at the display's refresh rate.
+
+That also dissolves the CPU conflict this file has been circling for days. Measured on the release
+build:
+
+| Config | App CPU |
+|---|---|
+| icon mode | 0.000% |
+| ticker, leisurely (20pt/s) | 0.000% |
+| ticker, steady (35pt/s) | 0.000% |
+| ticker, brisk (55pt/s) | 0.011% |
+
+There is no timer, so there is nothing to tick: §7.1's 300ms interval floor no longer applies, and
+none of the speeds trades against power.
+
+**And the work did not simply move to the window server, which was the obvious way for that table to
+be a lie.** Claiming "free" on the strength of our own process reading zero would have repeated the
+exact error of the fictional CPU table — measuring the cheap half. So `WindowServer` was A/B'd with
+two long-lived processes, one scrolling at brisk and one in icon mode, four 20-second samples each:
+
+```
+ticker on  (brisk): 43.9  43.4  43.0  43.5   median 43.43%
+ticker off (icon):  43.3  43.9  43.6  43.5   median 43.55%
+                                             difference -0.12pp
+```
+
+Indistinguishable, and the samples are tight enough for that to mean something. (The ~43% is this
+machine's ambient window-server load, not the app's.) An earlier attempt that killed and relaunched
+the app between samples produced garbage — a 45% baseline that *fell* to 14% with the ticker on —
+because relaunching drags process launch and window creation into the numbers. Interleaving two
+already-running processes is what made the comparison hold still. `TickerSpeed` is points per second now, and
+`isWithinPowerBudget` is gone — every setting is free in-process.
+
+**Removed:** `TickerWindow`, `Ticker`, `StatusItemTitle` and their tests. All three existed to make
+character-stepping cheap, and character-stepping is gone. Replaced by `TickerLayout` (seamless
+looping, the whitespace gap, the 30-character width cap — now expressed as the item's *width*, which
+is what §7.1's cap was always really about) and `TickerSpeed`, both still in the testable core.
+
+**The verification is finally direct, and it caught a real mistake.** A layer-backed view can be
+rasterised, so for the first time the ticker's *appearance* is checkable without looking at the menu
+bar. The first attempt reported `ink=0.0%` — apparently a ticker drawing nothing:
+
+1. `cacheDisplay(in:to:)` renders a view's own `draw(_:)` and silently ignores manually added
+   sublayers. It returned a blank bitmap for a view whose entire content is a sublayer. Fixed by
+   going through `CALayer.render(in:)`.
+2. Then it still read 0.0%, because the diagnostic dump showed `foreground=1 1 1` — `labelColor`
+   resolves to near-**white** for a dark menu bar, and I was rendering it onto a white ground.
+   White on white. The ticker had been fine the second time; the check was wrong.
+
+It now renders in both appearances against contrasting grounds and counts pixels that differ from
+the ground: **12.0% ink in light, 13.4% in dark**, with the PNGs confirming clean text clipped to the
+226pt item. Two failed checks in a row that both looked like broken features — the same shape of
+error as the fictional CPU table, and the reason a diagnostic needs checking as carefully as the code.
+
+**Also verified:** the popover and context menu still open with the view covering the button —
+`hitTest` returns nil so clicks pass through to the `NSStatusBarButton` underneath. Without that,
+laying a subview over the button would have swallowed every click.
+
+**2026-09-09 — Popover sat too far below the menu bar.**
+
+`NSPopover` opened **81pt** below the menu bar, which reads as detached from the item it belongs to.
+There is no API for that distance. Two approaches, one of which does not work:
+
+- **Raising the positioning rect does nothing.** `show(relativeTo:of:preferredEdge:)` clamps the
+  rect, so a 20pt lift changed the result not at all, and past ~40pt the popover declined to appear.
+- **Moving the window after `show` works**, and done in the same turn — before the window is drawn —
+  there is no visible jump.
+
+**The distance is measured, not hard-coded.** A 75pt lift happened to land correctly here, and
+shipping that constant would have been a bug on any other display: the default spacing and the menu
+bar's own height both vary. The correction now reads back where the window actually landed and
+closes the difference to a 6pt target. It is self-limiting — once the gap is right the correction is
+zero — which is what makes it safe to re-apply.
+
+Re-applying matters, because switching between the verse, chapter and settings screens resizes the
+popover and `NSPopover` re-positions itself when it does, undoing the lift. An observer on the
+window's resize notification re-runs the correction. Verified across all three screens, including
+settings at a different height: **6pt, 6pt, 6pt, 6pt**, window `maxY` identical each time.
+
+**Two measurement traps here, both caught before they became the answer:**
+
+1. `NSStatusBar.system.thickness` reports **22pt**, but the real menu bar on this display is **34pt**
+   — `screen.frame.maxY - screen.visibleFrame.maxY`. Sizing against the status bar thickness would
+   have left the popover 12pt lower than intended. `visibleFrame` is the authority.
+2. The `--self-test` geometry is not real. It measures 0.5s after launch, before macOS has placed
+   the status item, and reported a button at x=483 on a 1512pt-wide screen — far too left for a menu
+   bar item. `--report-popover` waits for the item to settle before measuring.
+
+**2026-09-09 (later) — Ticker rests still, scrolls on hover.**
+
+The verse now sits still showing its opening words, and only scrolls while the pointer is over it.
+Cheap to implement on top of the Core Animation marquee: removing the animation returns the layer to
+its model position, which *is* the start of the verse, so "stop" and "return to rest" are the same
+operation with no extra bookkeeping.
+
+Hover comes from an `NSTrackingArea` on the status button — attached to the button rather than to
+`TickerView`, because that view returns nil from `hitTest` (so clicks reach the button) and a view
+invisible to hit testing is not a sound place to hang tracking.
+
+**What is verified, and what is not.** Verified: at rest `animating=false`, offset 0; on hover the
+animation attaches; on exit it detaches and the offset returns to 0; the tracking area is installed;
+resting CPU is **0.022%**. Not verified: that macOS actually delivers enter/exit to a tracking area
+on a status item. Synthetic pointer events are filtered on this machine — the cursor either ignores
+the target or freezes outright — so a hover test here proves nothing either way.
+
+**A fallback was built, measured, and then deliberately removed.** Global and local `.mouseMoved`
+monitors did the same job by watching the pointer's position, and unlike the tracking area they were
+provably firing (an event counter went 35 → 155 as the pointer moved). But they wake the process on
+every mouse move anywhere on the system, and the cost was real: **0.822% CPU at rest** versus
+**0.022%** without them — on a feature whose whole selling point is that it costs nothing when still.
+
+Paying that permanently to insure against a risk I could not price was the wrong trade, so the
+monitors are gone and the standard mechanism ships alone. If hover turns out not to fire, the fix is
+to put them back — but that should be a response to evidence, not to my inability to test.

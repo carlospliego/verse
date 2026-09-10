@@ -10,9 +10,8 @@
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/PreviewRenderer.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/SettingsView.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swift.o
-/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TagChip.swift.o
-/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o
+/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseText.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/VerseView.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/BibleStore.swift.o
@@ -23,8 +22,8 @@
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o
+/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerLayout.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o
-/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o

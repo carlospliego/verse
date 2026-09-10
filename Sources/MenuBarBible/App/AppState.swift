@@ -44,7 +44,6 @@ final class AppState: ObservableObject {
         didSet {
             guard tickerEnabled != oldValue else { return }
             UserDefaults.standard.set(tickerEnabled, forKey: PreferenceKey.tickerEnabled)
-            updateTicker()
         }
     }
 
@@ -52,9 +51,6 @@ final class AppState: ObservableObject {
         didSet {
             guard tickerSpeed != oldValue else { return }
             UserDefaults.standard.set(tickerSpeed.rawValue, forKey: PreferenceKey.tickerSpeed)
-            // Applied on the next tick. The text does not restart and the timer is not
-            // rescheduled, so changing speed mid-verse is seamless.
-            ticker.speed = tickerSpeed
         }
     }
 
@@ -64,11 +60,6 @@ final class AppState: ObservableObject {
     private var user: UserStore?
     private var picker: VersePicker?
     private var dayChangeObserver: NSObjectProtocol?
-
-    /// Owned here, but its output goes to `StatusItemTitle`, not to a published
-    /// property on this object — publishing the title here would invalidate the whole
-    /// scene on every ticker tick.
-    private let ticker = Ticker()
 
     private(set) var availableTranslations: [BibleTranslation] = []
 
@@ -85,10 +76,6 @@ final class AppState: ObservableObject {
             try openStores()
         } catch {
             loadFailure = String(describing: error)
-        }
-
-        ticker.onTitleChange = { title in
-            StatusItemTitle.shared.set(title)
         }
 
         // Rolling over midnight while the app is running must produce a new verse.
@@ -142,7 +129,6 @@ final class AppState: ObservableObject {
             today = try render(curated, using: bible)
             chapterVerses = loadChapter(for: curated, using: bible)
             loadFailure = nil
-            updateTicker()
         } catch {
             loadFailure = String(describing: error)
         }
@@ -154,7 +140,6 @@ final class AppState: ObservableObject {
         do {
             today = try render(curated, using: bible)
             chapterVerses = loadChapter(for: curated, using: bible)
-            updateTicker()
         } catch {
             loadFailure = String(describing: error)
         }
@@ -183,17 +168,6 @@ final class AppState: ObservableObject {
                             translation: translationCode)) ?? []
     }
 
-    // MARK: - Ticker
-
-    /// Starts or stops the ticker to match the preference. Takes effect immediately,
-    /// with no restart.
-    private func updateTicker() {
-        guard tickerEnabled, let today else {
-            ticker.stop()
-            return
-        }
-        ticker.start(text: today.tickerText, speed: tickerSpeed)
-    }
 }
 
 enum AppError: Error, CustomStringConvertible {

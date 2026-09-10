@@ -2,8 +2,8 @@
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/ChapterHighlight.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/SQLiteDatabase.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/StableHash.swift
+/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerLayout.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerSpeed.swift
-/Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/TickerWindow.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/UserStore.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Data/VersePicker.swift
 /Users/carlos/src/verse/Sources/MenuBarBibleCore/Models/BibleTranslation.swift

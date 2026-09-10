@@ -6,8 +6,8 @@
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/SQLiteDatabase.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/StableHash.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Tag.swift.o
+/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerLayout.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerSpeed.swift.o
-/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/TickerWindow.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/UserStore.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/Verse.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCore.build/VersePicker.swift.o
@@ -15,7 +15,8 @@
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/BibleStoreTests.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/ChapterHighlightTests.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TestSupport.swift.o
-/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerWindowTests.swift.o
+/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerLayoutTests.swift.o
+/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/TickerSpeedTests.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/UserStoreTests.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBibleCoreTests.build/VersePickerTests.swift.o
 /Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBiblePackageTests.build/runner.swift.o

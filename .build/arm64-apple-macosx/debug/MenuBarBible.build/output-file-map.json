@@ -58,19 +58,12 @@
     "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.swiftdeps",
     "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemController.dia"
   },
-  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/StatusItemTitle.swift": {
-    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.d",
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/StatusItemTitle.dia"
-  },
-  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/Ticker.swift": {
-    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.d",
-    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swift.o",
-    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker~partial.swiftmodule",
-    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.swiftdeps",
-    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/Ticker.dia"
+  "/Users/carlos/src/verse/Sources/MenuBarBible/MenuBar/TickerView.swift": {
+    "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView.d",
+    "object": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView.swift.o",
+    "swiftmodule": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView~partial.swiftmodule",
+    "swift-dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView.swiftdeps",
+    "diagnostics": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/TickerView.dia"
   },
   "/Users/carlos/src/verse/Sources/MenuBarBible/Views/ChapterView.swift": {
     "dependencies": "/Users/carlos/src/verse/.build/arm64-apple-macosx/debug/MenuBarBible.build/ChapterView.d",
